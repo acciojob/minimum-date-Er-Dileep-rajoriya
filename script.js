@@ -1,5 +1,11 @@
 function minDate(dates) {
-  //write you code here
+  // Convert the date strings to Date objects and find the minimum date
+  const earliestDate = dates.reduce((minDate, currentDate) => {
+    // Compare the current date with the minimum date
+    return new Date(currentDate) < new Date(minDate) ? currentDate : minDate;
+  }, dates[0]); // Initialize with the first date
+  
+  return earliestDate; // Return the earliest date
 }
 
 // Do not change the code
@@ -37,4 +43,4 @@ var dates = [
   "2023/03/30",
 ];
 
-alert(minDate(dates));
+alert(minDate(dates)); // This will alert "2023/03/01"
